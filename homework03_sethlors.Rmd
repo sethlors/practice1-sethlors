@@ -1,0 +1,77 @@
+---
+title: 'Homework 3'
+author: "Seth Lors"
+date: "2/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### Due: 2/17/2022 before 11:59pm. Submit in Canvas (file upload).
+
+1. Finish the in-class practice in Slides 3-12 in "Lecture 2-2-Practice for git", link: https://yumouqiu.github.io/DS202-Spring2023/Practice/practice01.html  
+    a. Download the RMarkdown file with these homework instructions to use as a template for your work. Make sure to replace "Your Name" with your name.  
+    b. In the RMarkdown file, write down table of team members, and their github repository links;
+    the number of successful pull requests you made, and the github repository to which you requested a change;
+    the number of pull requests you accepted, and the github repository from which you accepted.
+        Seth Lors - https://github.com/sethlors/practice1-sethlors
+        Cory Roth - https://github.com/sethlors/practice1-Cory-Roth
+Number of pull requests was greater than 2. (It was increasing as the project when on)
+    c. Write down a list with at least 3 tips of how to make working with git/github easier
+        Tip 1: Ensure your file names are easy to read and understand
+        Tip 2: Provide relevant comments in your commits
+        Tip 3: Make your pull requests as small as possible so that they are easier to review.
+
+2. Generate the graph of LifExp vs. gdpPercap for US, Canada (fixed data) and Australia by RMarkdown based on the data set "gapminder-5060", like what we did in the class.  
+Please use Github to collaborate on this problem. For example, one member can create the plot of US in his/her repository. The other member will fork this repository, add the result for the second country, and make a pull request for merging into the main repository. Each member should at least analyze one country and make at least one pull request. **Please submit the RMarkdown file, the output file, and the screen shot of the successful pull request and the merge.**
+```{r}
+df = read.csv("gapminder-5060.csv")
+df_cd = read.csv("gapminder-5060.csv")
+df_au = read.csv("gapminder-5060.csv")
+```
+```{r}
+head(df)
+```
+```{r}
+df_us = df[df$country == "United States",]
+plot(df_us$gdpPercap, df_us$lifeExp, main = "Life Expectancy vs. GDP per Capita for the United States", xlab = "GDP per Capita", ylab = "Life Expectancy")
+```
+```{r}
+df_cd = df_cd[df_cd$country == "Canada",]
+plot(df_cd$gdpPercap, df_cd$lifeExp, main = "Life Expectancy vs. GDP per Capita for Canada", xlab = "GDP per Capita", ylab = "Life Expectancy")
+```
+```{r}
+df_au = df_au[df_au$country == "Australia",]
+plot(df_au$gdpPercap, df_au$lifeExp, main = "Life Expectancy vs. GDP per Capita for Australia", xlab = "GDP per Capita", ylab = "Life Expectancy")
+```
+
+3. Write a paragraph (~200 words) describing an example of what you consider data science. Write your paragraph in R Markdown. Include at least 
+    a. one link to a chart or an image and 
+    b. at least one itemized or enumerated list.
+
+To me, Data science is the study of data. It is the process of extracting knowledge from data. Data science is a
+multidisciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and
+insights from many structural and unstructured data. Data science is related to data mining, machine learning and big
+data. Data science is a "concept to unify statistics, data analysis and their related methods" in order to "understand
+and analyze actual phenomena" with data.
+
+To me, Data science is studying data. To study data, we try and grab as much information as possible from the data
+we either collect or are given. We then try to understand the data and provide meaning to it. We can then use this
+data to make predictions about the future, make decisions, or even create new data. For example, [![Alt text](https://www.sciencebuddies.org/92iqBHsRxYQMeFOMBQR_Tw9bG8I=/403x295/-/https/www.sciencebuddies.org/cdn/Files/460/9/project_graph.gif)](https://www.sciencebuddies.org/science-fair-projects/science-fair/data-analysis-graphs)
+shows a graph of the battery usage of a flashlight over time. A data scientist would look at this graph and try to extract
+information from it. They would look at the data and try to understand what the data is telling them. They would then.
+In this case, the data scientist would see the three variables:
+
+1. Duracell
+2. Energizer
+3. Panasonic.
+
+They would then be able to provide information to either a client or themselves about the battery life of each of
+these brands.
+
+Note: your submission is supposed to be fully reproducible, i.e. the TA and I will 'knit' your submission in RStudio. Including the link to the image is the tricky part here. Make sure that you don't use any file structure that depends on your computing environment.
+
+
+For the submission: submit your solution in an **R Markdown file** and (just for insurance) submit the corresponding html (or Word) file with it. 
